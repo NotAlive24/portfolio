@@ -167,7 +167,8 @@ body {
 }
 
 .terminal-content {
-    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
 }
 
 
