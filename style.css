@@ -5,6 +5,7 @@ body {
     font-family: "Noto Sans Mono", monospace;
     background-color: black;
     padding: 2%;
+    min-width: 800px;
 }
 
 /* Nav bar */
@@ -167,4 +168,7 @@ body {
 
 .terminal-content {
     white-space: pre; /* preserves spaces and \n line breaks */
+    padding-right: 10px;
 }
+
+
