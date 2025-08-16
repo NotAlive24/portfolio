@@ -50,11 +50,12 @@ body {
 }
 
 /* Certificates */
-.certifications {
-    width: 60%;
+.certificates {
+    width: 50%;
     border-radius: 15px;
     margin-top: 10px;
 }
+
 
 /* Toggle buttons */
 .toggle-btn {
