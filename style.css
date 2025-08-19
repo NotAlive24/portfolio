@@ -1,3 +1,4 @@
+/* ===== Global Styles ===== */
 body {
     user-select: none;
     color: greenyellow;
@@ -5,10 +6,17 @@ body {
     font-family: "Noto Sans Mono", monospace;
     background-color: black;
     padding: 2%;
+    margin: 0;
+    overflow-x: hidden; /* Prevent sideways scroll */
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
-/* Nav bar */
+/* ===== Nav Bar ===== */
 .nav {
     display: flex;
     align-items: center;
@@ -18,12 +26,13 @@ body {
     border-radius: 15px 50px;
     padding: 2% 4%;
     backdrop-filter: blur(10px);
+    flex-wrap: wrap; /* allow wrapping on small screens */
 }
-
 
 .profile {
     width: 15%;
     border-radius: 30%;
+    min-width: 80px; /* keeps image visible on mobile */
 }
 
 .Welcome:hover {
@@ -31,26 +40,24 @@ body {
     text-shadow: 0 0 10px rgb(250, 116, 161);
 }
 
-/* Content boxes */
-.rev-nav {
-    margin-top: 20px;
-    background-color: rgba(73, 73, 73, 0.2);
-    border: 2px solid rgb(148, 147, 147);
-    border-radius: 50px 15px;
-    padding: 20px;
-    backdrop-filter: blur(10px);
-}
-
+/* ===== Content Boxes ===== */
+.rev-nav,
 .rev-rev-nav {
     margin-top: 20px;
     background-color: rgba(73, 73, 73, 0.2);
     border: 2px solid rgb(148, 147, 147);
-    border-radius: 15px 50px;
     padding: 20px;
     backdrop-filter: blur(10px);
 }
 
-/* Certificates */
+.rev-nav {
+    border-radius: 50px 15px;
+}
+.rev-rev-nav {
+    border-radius: 15px 50px;
+}
+
+/* ===== Certificates ===== */
 .certificates {
     width: 50%;
     border-radius: 15px;
@@ -81,13 +88,12 @@ body {
     transition: max-height 0.5s ease, padding 0.3s ease;
     padding: 0 10px;
 }
-
-/* Open state */
 .cert-box.open {
     max-height: 800px; /* adjust if needed */
     padding: 10px;
 }
 
+/* Master toggle */
 .master-toggle {
     cursor: pointer;
     font-size: 1.2em;
@@ -105,7 +111,7 @@ body {
     text-shadow: 0 0 10px rgb(250, 116, 161);
 }
 
-
+/* ===== Contact Box ===== */
 .contact {
     margin-top: 30px;
     padding: 20px;
@@ -114,51 +120,43 @@ body {
     border-radius: 15px;
     backdrop-filter: blur(10px);
 }
-
 .contact ul {
     list-style: none;
     padding: 0;
 }
-
 .contact li {
     margin: 10px 0;
 }
-
 .contact a {
     text-decoration: none;
     color: greenyellow;
     font-size: 1.2em;
     transition: color 0.3s, text-shadow 0.3s;
 }
-
 .contact a:hover {
     color: rgb(230, 143, 172);
     text-shadow: 0 0 10px rgb(250, 116, 161);
 }
 
-
-/* Terminal Box */
+/* ===== Terminal Box ===== */
 .terminal-box {
     background: rgba(0, 0, 0, 0.8);
     border: 2px solid #33ff00;
     border-radius: 10px;
     padding: 15px;
     width: 40%;
+    min-width: 250px;
     font-family: "Courier New", monospace;
     color: #33ff00;
     text-shadow: 0 0 5px #33ff00;
     margin: 0 20px;
 }
-
-/* Fake window header */
 .terminal-header {
     color: red;
     margin-bottom: 10px;
     font-size: 1.2em;
     letter-spacing: 5px;
 }
-
-/* Cursor */
 .cursor {
     display: inline-block;
     animation: blink 0.8s infinite;
@@ -166,10 +164,47 @@ body {
 @keyframes blink {
     50% { opacity: 0; }
 }
-
 .terminal-content {
     white-space: pre-wrap;
     word-wrap: break-word;
 }
 
+/* ===== Responsive Design ===== */
 
+/* Tablets */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .terminal-box {
+        width: 90%;
+        margin: 15px 0;
+    }
+
+    .profile {
+        width: 40%;
+        margin-bottom: 15px;
+    }
+
+    .certificates {
+        width: 80%;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    h2 {
+        font-size: 18px;
+    }
+
+    .certificates {
+        width: 100%;
+    }
+}
