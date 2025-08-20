@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function checkOrientation() {
     if (/Mobi|Android/i.test(navigator.userAgent)) {  
         if (window.innerHeight > window.innerWidth) {
-            
+            alert("For best experience, please rotate your device to landscape mode 📱↔️");
         }
     }
 }
