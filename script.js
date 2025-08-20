@@ -69,10 +69,13 @@ document.addEventListener("DOMContentLoaded", () => {
     type();
 });
 
+let orientationWarned = false; // flag to track if already shown
+
 function checkOrientation() {
-    if (/Mobi|Android/i.test(navigator.userAgent)) {  
+    if (!orientationWarned && /Mobi|Android/i.test(navigator.userAgent)) {  
         if (window.innerHeight > window.innerWidth) {
             alert("For best experience, please rotate your device to landscape mode 📱↔️");
+            orientationWarned = true; // mark as shown
         }
     }
 }
@@ -82,3 +85,4 @@ window.addEventListener("load", checkOrientation);
 
 // Run on resize (in case they rotate after load)
 window.addEventListener("resize", checkOrientation);
+
