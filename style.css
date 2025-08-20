@@ -20,7 +20,6 @@ body {
     backdrop-filter: blur(10px);
 }
 
-
 .profile {
     width: 15%;
     border-radius: 30%;
@@ -56,6 +55,7 @@ body {
     border-radius: 15px;
     margin-top: 10px;
 }
+
 
 /* Toggle buttons */
 .toggle-btn {
