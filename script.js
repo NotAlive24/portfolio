@@ -1,3 +1,15 @@
+function detectDeviceAndAlert() {
+    // Basic mobile detection using user agent
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+
+    if (isMobile) {
+        alert("For best experience, please rotate your device to landscape mode");
+    }
+}
+
+// Call the function when the page loads
+window.onload = detectDeviceAndAlert;
+
 document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll(".toggle-btn");
 
@@ -69,3 +81,16 @@ document.addEventListener("DOMContentLoaded", () => {
     type();
 });
 
+function checkOrientation() {
+    if (/Mobi|Android/i.test(navigator.userAgent)) {  
+        if (window.innerHeight > window.innerWidth) {
+            
+        }
+    }
+}
+
+// Run on load
+window.addEventListener("load", checkOrientation);
+
+// Run on resize (in case they rotate after load)
+window.addEventListener("resize", checkOrientation);
