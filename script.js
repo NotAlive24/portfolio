@@ -1,15 +1,20 @@
+// ✅ Detect device + orientation
 function detectDeviceAndAlert() {
-    // Basic mobile detection using user agent
     const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const isPortrait = window.innerHeight > window.innerWidth;
 
-    if (isMobile) {
+    if (isMobile && isPortrait) {
         alert("For best experience, please rotate your device to landscape mode");
     }
 }
 
-// Call the function when the page loads
-window.onload = detectDeviceAndAlert;
+// Run on load + orientation change
+window.addEventListener("load", detectDeviceAndAlert);
+window.addEventListener("resize", detectDeviceAndAlert);
+window.addEventListener("orientationchange", detectDeviceAndAlert);
 
+
+// ✅ Toggle individual certification boxes
 document.addEventListener("DOMContentLoaded", () => {
     const buttons = document.querySelectorAll(".toggle-btn");
 
@@ -26,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+
+// ✅ Master toggle button (open/close all)
 document.addEventListener("DOMContentLoaded", () => {
     const masterBtn = document.querySelector(".master-toggle");
     const certBoxes = document.querySelectorAll(".cert-box");
@@ -47,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// ✅ Terminal typing effect
 document.addEventListener("DOMContentLoaded", () => {
     const terminal = document.getElementById("terminal");
 
@@ -80,17 +88,3 @@ document.addEventListener("DOMContentLoaded", () => {
 
     type();
 });
-
-function checkOrientation() {
-    if (/Mobi|Android/i.test(navigator.userAgent)) {  
-        if (window.innerHeight > window.innerWidth) {
-            
-        }
-    }
-}
-
-// Run on load
-window.addEventListener("load", checkOrientation);
-
-// Run on resize (in case they rotate after load)
-window.addEventListener("resize", checkOrientation);
