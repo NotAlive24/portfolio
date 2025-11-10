@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const lines = [
         `┌──(notalive㉿kali)-[~] 
 └─$ whoami    
-    Not Alive
+    Not Alive AKA Sanjay
 ┌──(notalive㉿kali)-[~]
 └─$ goal   
     Become a Pentester/Red Teamer`
